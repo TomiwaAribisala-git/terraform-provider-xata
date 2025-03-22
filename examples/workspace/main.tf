@@ -4,14 +4,17 @@ terraform {
       source = "registry.terraform.io/hashicorp/xata"
     }
   }
+  required_version = ">= 1.1.0"
 }
 
 provider "xata" {
   apikey = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 }
 
-data "xata_workspaces" "example" {}
+resource "xata_workspace" "markspace" {
+  name = "markspace"
+}
 
-output "example_workspaces" {
-  value = data.xata_workspaces.example
+output "markspace_workspace" {
+  value = xata_workspace.markspace
 }

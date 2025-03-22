@@ -1,3 +1,6 @@
+// Copyright (c) HashiCorp, Inc.
+// SPDX-License-Identifier: MPL-2.0
+
 package provider
 
 import (
@@ -49,8 +52,10 @@ func (p *xataProvider) Metadata(_ context.Context, _ provider.MetadataRequest, r
 // Schema defines the provider-level schema for configuration data.
 func (p *xataProvider) Schema(_ context.Context, _ provider.SchemaRequest, resp *provider.SchemaResponse) {
     resp.Schema = schema.Schema{
+        Description: "Interact with Xata.",
         Attributes: map[string]schema.Attribute{
             "apikey": schema.StringAttribute{
+                Description: "API KEY for Xata API. May also be provided via XATA_API_KEY environment variable.",
                 Optional:  true,
                 Sensitive: true,
             },

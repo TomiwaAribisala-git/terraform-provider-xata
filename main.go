@@ -4,15 +4,14 @@
 package main
 
 import (
-    "context"
-    "flag"
-    "log"
+	"context"
+	"flag"
+	"log"
 
-    "github.com/hashicorp/terraform-plugin-framework/providerserver"
+	"github.com/hashicorp/terraform-plugin-framework/providerserver"
 
-    "terraform-provider-xata/internal/provider"
+	"terraform-provider-xata/internal/provider"
 )
-
 
 var (
 	// these will be set by the goreleaser configuration
@@ -24,24 +23,24 @@ var (
 )
 
 func main() {
-    var debug bool
+	var debug bool
 
-    flag.BoolVar(&debug, "debug", false, "set to true to run the provider with support for debuggers like delve")
-    flag.Parse()
+	flag.BoolVar(&debug, "debug", false, "set to true to run the provider with support for debuggers like delve")
+	flag.Parse()
 
-    opts := providerserver.ServeOpts{
-        // NOTE: This is not a typical Terraform Registry provider address,
-        // such as registry.terraform.io/hashicorp/xata. This specific
-        // provider address is used in these tutorials in conjunction with a
-        // specific Terraform CLI configuration for manual development testing
-        // of this provider.
-        Address: "registry.terraform.io/hashicorp/xata",
-        Debug:   debug,
-    }
+	opts := providerserver.ServeOpts{
+		// NOTE: This is not a typical Terraform Registry provider address,
+		// such as registry.terraform.io/hashicorp/xata. This specific
+		// provider address is used in these tutorials in conjunction with a
+		// specific Terraform CLI configuration for manual development testing
+		// of this provider.
+		Address: "registry.terraform.io/hashicorp/xata",
+		Debug:   debug,
+	}
 
-    err := providerserver.Serve(context.Background(), provider.New(version), opts)
+	err := providerserver.Serve(context.Background(), provider.New(version), opts)
 
-    if err != nil {
-        log.Fatal(err.Error())
-    }
+	if err != nil {
+		log.Fatal(err.Error())
+	}
 }

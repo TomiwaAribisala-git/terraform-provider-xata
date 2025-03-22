@@ -1,3 +1,4 @@
-provider "scaffolding" {
-  # example configuration here
+# Configuration-based authentication
+provider "xata" {
+  apikey = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 }

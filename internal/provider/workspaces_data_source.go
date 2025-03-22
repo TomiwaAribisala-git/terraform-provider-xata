@@ -1,3 +1,6 @@
+// Copyright (c) HashiCorp, Inc.
+// SPDX-License-Identifier: MPL-2.0
+
 package provider
 
 import (
@@ -49,27 +52,33 @@ func (d *workspacesDataSource) Metadata(_ context.Context, req datasource.Metada
 // Schema defines the schema for the data source.
 func (d *workspacesDataSource) Schema(_ context.Context, _ datasource.SchemaRequest, resp *datasource.SchemaResponse) {
   resp.Schema = schema.Schema{
+    Description: "Fetches the list of workspaces.",
     Attributes: map[string]schema.Attribute{
       "workspaces": schema.ListNestedAttribute{
         Computed: true,
         NestedObject: schema.NestedAttributeObject{
           Attributes: map[string]schema.Attribute{
             "id": schema.StringAttribute{
+              Description: "Numeric Identifier of the worskpace.",
               Computed: true,
             },
             //"unique_id": schema.StringAttribute{
               //Computed: true,
             //},
             "name": schema.StringAttribute{
+              Description: "Name of the worskpace.",
               Computed: true,
             },
             "slug": schema.StringAttribute{
+              Description: "Slug identifier of the worskpace.",
               Computed: true,
             },
             "role": schema.StringAttribute{
+              Description: "Role status of the worskpace.",
               Computed: true,
             },
             "plan": schema.StringAttribute{
+              Description: "Tier of the worskpace.",
               Computed: true,
             },
           },
@@ -121,7 +130,7 @@ func (d *workspacesDataSource) Read(ctx context.Context, req datasource.ReadRequ
       Name:       types.StringValue(workspace.Name),
       Slug:       types.StringValue(workspace.Slug),
       Role:       types.StringValue(workspace.Role.String()),
-      // Plan:       types.StringValue(workspace.Plan.String()),
+      Plan:       types.StringValue(workspace.Plan.String()),
     }
 
     state.Workspaces = append(state.Workspaces, workspaceState)
