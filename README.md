@@ -9,7 +9,7 @@
 ## Contributing
 - Fork and clone this repo
 - Run `make install`
-- Make and test your changes `cd examples` && `make plan` && `make apply` && `make destroy`
+- Make and test your changes `cd examples` `&&` `make plan` `&&` `make apply` `&&` `make destroy`
 - Generate Documentation `make generate`
 - Submit a PR!
 
