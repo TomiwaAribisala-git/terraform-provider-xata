@@ -1,2 +1,2 @@
-# List all coffees.
+# List all workspaces.
 data "xata_workspaces" "all" {}
