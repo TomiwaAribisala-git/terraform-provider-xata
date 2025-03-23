@@ -9,8 +9,8 @@
 ## Contributing
 - Fork and clone this repo
 - Run `make install`
-- Make and test your changes `cd examples` `&&` `make plan` `&&` `make apply` `&&` `make destroy`
-- Generate Documentation `make generate`
+- Make data source changes `cd examples/workspaces` `&&` `terraform plan`
+- Make resource changes `cd examples/workspace` `&&` `terraform apply` `&&` `terraform destroy`
 - Submit a PR!
 
 ## Todo
