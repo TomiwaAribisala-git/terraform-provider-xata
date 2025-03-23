@@ -59,26 +59,26 @@ func (d *workspacesDataSource) Schema(_ context.Context, _ datasource.SchemaRequ
 				NestedObject: schema.NestedAttributeObject{
 					Attributes: map[string]schema.Attribute{
 						"id": schema.StringAttribute{
-							Description: "Numeric Identifier of the worskpace.",
+							Description: "Numeric Identifier of each worskpace.",
 							Computed:    true,
 						},
 						//"unique_id": schema.StringAttribute{
 						//Computed: true,
 						//},
 						"name": schema.StringAttribute{
-							Description: "Name of the worskpace.",
+							Description: "Name of each worskpace.",
 							Computed:    true,
 						},
 						"slug": schema.StringAttribute{
-							Description: "Slug identifier of the worskpace.",
+							Description: "Slug identifier of each worskpace.",
 							Computed:    true,
 						},
 						"role": schema.StringAttribute{
-							Description: "User role	status of the worskpace.",
+							Description: "User role	status of each worskpace.",
 							Computed:    true,
 						},
 						"plan": schema.StringAttribute{
-							Description: "Tier of the worskpace.",
+							Description: "Tier of each worskpace.",
 							Computed:    true,
 						},
 					},

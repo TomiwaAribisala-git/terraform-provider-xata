@@ -15,7 +15,7 @@ const (
 	// such as updating the Makefile and running the testing through that tool.
 	providerConfig = `
 	provider "xata" {
-  	apikey = "xau_9FisCu89grYLSDxODBduKAeEHlbymzWC0"
+  	apikey = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 	}
 	`
 )
