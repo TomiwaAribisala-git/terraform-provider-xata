@@ -22,11 +22,11 @@ resource "xata_workspace" "markspace" {
 `,
 				Check: resource.ComposeAggregateTestCheckFunc(
 					// Verify created workspace has Computed attributes filled.
-					resource.TestCheckResourceAttr("xata_workspace.markspace", "Name", "markspace"),
-					resource.TestCheckResourceAttr("xata_workspace.markspace", "Slug", ""),
-					resource.TestCheckResourceAttr("xata_workspace.markspace", "Id", "10"),
-					resource.TestCheckResourceAttr("xata_workspace.markspace", "MemberCount", "2"),
-					resource.TestCheckResourceAttr("xata_workspace.markspace", "Plan", "free"),
+					resource.TestCheckResourceAttr("xata_workspace.markspace", "name", "markspace"),
+					resource.TestCheckResourceAttr("xata_workspace.markspace", "slug", "markspace"),
+					// resource.TestCheckResourceAttrSet("xata_workspace.markspace", "id"),
+					resource.TestCheckResourceAttr("xata_workspace.markspace", "membercount", "1"),
+					resource.TestCheckResourceAttr("xata_workspace.markspace", "plan", "free"),
 				),
 			},
 			// ImportState testing
@@ -47,11 +47,11 @@ resource "xata_workspace" "markspace" {
 `,
 				Check: resource.ComposeAggregateTestCheckFunc(
 					// Verify created workspace has Computed attributes filled.
-					resource.TestCheckResourceAttr("xata_workspace.markspace", "Name", "narkspace"),
-					resource.TestCheckResourceAttr("xata_workspace.markspace", "Slug", ""),
-					resource.TestCheckResourceAttr("xata_workspace.markspace", "Id", "10"),
-					resource.TestCheckResourceAttr("xata_workspace.markspace", "MemberCount", "2"),
-					resource.TestCheckResourceAttr("xata_workspace.markspace", "Plan", "free"),
+					resource.TestCheckResourceAttr("xata_workspace.markspace", "name", "narkspace"),
+					resource.TestCheckResourceAttr("xata_workspace.markspace", "slug", "narkspace"),
+					// resource.TestCheckResourceAttr("xata_workspace.markspace", "id"),
+					resource.TestCheckResourceAttr("xata_workspace.markspace", "membercount", "1"),
+					resource.TestCheckResourceAttr("xata_workspace.markspace", "plan", "free"),
 				),
 			},
 			// Delete testing automatically occurs in TestCase

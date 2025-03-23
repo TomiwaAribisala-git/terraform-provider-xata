@@ -26,7 +26,7 @@ type workspacesDataSourceModel struct {
 
 // workspacesModel maps workspaces schema data.
 type workspacesModel struct {
-	ID types.String `tfsdk:"id"`
+	Id types.String `tfsdk:"id"`
 	//Unique_id   types.String              `tfsdk:"unique_id"`
 	Name types.String `tfsdk:"name"`
 	Slug types.String `tfsdk:"slug"`
@@ -125,7 +125,7 @@ func (d *workspacesDataSource) Read(ctx context.Context, req datasource.ReadRequ
 	// Map response body to model
 	for _, workspace := range workspaceresponse.Workspaces {
 		workspaceState := workspacesModel{
-			ID: types.StringValue(workspace.Id),
+			Id: types.StringValue(workspace.Id),
 			// Unique_id:  types.StringValue(*workspace.Unique_id),
 			Name: types.StringValue(workspace.Name),
 			Slug: types.StringValue(workspace.Slug),

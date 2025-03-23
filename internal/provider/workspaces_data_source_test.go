@@ -18,13 +18,13 @@ func TestAccWorkspacesDataSource(t *testing.T) {
 				Config: providerConfig + `data "xata_workspaces" "test" {}`,
 				Check: resource.ComposeAggregateTestCheckFunc(
 					// Verify number of workspaces returned
-					resource.TestCheckResourceAttr("data.xata_workspaces.test", "workspaces.#", "9"),
+					resource.TestCheckResourceAttr("data.xata_workspaces.test", "workspaces.#", "2"),
 					// Verify the first workspace to ensure all attributes are set
-					resource.TestCheckResourceAttr("data.xata_workspaces.test", "workspaces.0.Id", "1"),
-					resource.TestCheckResourceAttr("data.xata_workspaces.test", "workspaces.0.Name", "markspace"),
-					resource.TestCheckResourceAttr("data.xata_workspaces.test", "workspaces.0.Slug", ""),
-					resource.TestCheckResourceAttr("data.xata_workspaces.test", "workspaces.0.Role", "owner"),
-					resource.TestCheckResourceAttr("data.xata_workspaces.test", "workspaces.0.Plan", "free"),
+					resource.TestCheckResourceAttr("data.xata_workspaces.test", "workspaces.0.id", "Tomiwa-Aribisala-s-workspace-tameub"),
+					resource.TestCheckResourceAttr("data.xata_workspaces.test", "workspaces.0.name", "Tomiwa Aribisala's workspace"),
+					resource.TestCheckResourceAttr("data.xata_workspaces.test", "workspaces.0.slug", "Tomiwa-Aribisala-s-workspace"),
+					resource.TestCheckResourceAttr("data.xata_workspaces.test", "workspaces.0.role", "owner"),
+					resource.TestCheckResourceAttr("data.xata_workspaces.test", "workspaces.0.plan", "free"),
 				),
 			},
 		},

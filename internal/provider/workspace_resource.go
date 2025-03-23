@@ -139,6 +139,7 @@ func (r *workspaceResource) Create(ctx context.Context, req resource.CreateReque
 	plan.Id = types.StringValue(workspace.Id)
 	plan.MemberCount = types.Int64Value(int64(workspace.MemberCount))
 	plan.Plan = types.StringValue(workspace.Plan.String())
+	plan.LastUpdated = types.StringValue(time.Now().Format(time.RFC850))
 
 	// Set state to fully populated data
 	diags = resp.State.Set(ctx, plan)
@@ -225,7 +226,7 @@ func (r *workspaceResource) Update(ctx context.Context, req resource.UpdateReque
 	// Map response body to schema and populate Computed attribute values
 	plan.Name = types.StringValue(updatedWorkspace.Name)
 	plan.Slug = types.StringValue(*updatedWorkspace.Slug)
-	plan.Id = types.StringValue(updatedWorkspace.Id)
+	plan.Id = types.StringValue(id.ValueString())
 	plan.MemberCount = types.Int64Value(int64(updatedWorkspace.MemberCount))
 	plan.Plan = types.StringValue(updatedWorkspace.Plan.String())
 	plan.LastUpdated = types.StringValue(time.Now().Format(time.RFC850))

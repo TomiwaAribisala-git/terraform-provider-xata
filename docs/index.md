@@ -24,4 +24,4 @@ provider "xata" {
 
 ### Optional
 
-- `apikey` (String, Sensitive) API KEY for Xata API. May also be provided via XATA_API_KEY environment variable.
+- `apikey` (String) API KEY for Xata API. May also be provided via XATA_API_KEY environment variable.

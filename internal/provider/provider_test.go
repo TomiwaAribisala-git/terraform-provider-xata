@@ -14,9 +14,7 @@ const (
 	// It is also possible to use the XATA_API_KEY	environment variable instead,
 	// such as updating the Makefile and running the testing through that tool.
 	providerConfig = `
-	provider "xata" {
-  	apikey = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-	}
+	provider "xata" {}
 	`
 )
 

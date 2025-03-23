@@ -57,7 +57,6 @@ func (p *xataProvider) Schema(_ context.Context, _ provider.SchemaRequest, resp 
 			"apikey": schema.StringAttribute{
 				Description: "API KEY for Xata API. May also be provided via XATA_API_KEY environment variable.",
 				Optional:    true,
-				Sensitive:   true,
 			},
 		},
 	}
@@ -122,7 +121,7 @@ func (p *xataProvider) Configure(ctx context.Context, req provider.ConfigureRequ
 	tflog.Debug(ctx, "Creating Xata client")
 
 	// Create a new Xata client using the configuration values
-	client, err := xata.NewWorkspacesClient(xata.WithAPIKey("apikey"))
+	client, err := xata.NewWorkspacesClient(xata.WithAPIKey(apikey))
 	if err != nil {
 		resp.Diagnostics.AddError(
 			"Unable to Create Xata API Client",
