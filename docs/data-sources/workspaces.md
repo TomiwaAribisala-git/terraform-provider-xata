@@ -27,5 +27,5 @@ Read-Only:
 - `id` (String) Numeric Identifier of the worskpace.
 - `name` (String) Name of the worskpace.
 - `plan` (String) Tier of the worskpace.
-- `role` (String) Role status of the worskpace.
+- `role` (String) User role	status of the worskpace.
 - `slug` (String) Slug identifier of the worskpace.

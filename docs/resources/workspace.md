@@ -41,8 +41,8 @@ resource "xata_workspace" "markspace" {
 ### Read-Only
 
 - `id` (String) Numeric Identifier of the worskpace.
-- `last_updated` (String) Timestamp of the last Terraform update of the order.
-- `membercount` (Number) Member Count of the worskpace.
+- `last_updated` (String) Timestamp of the last Terraform update of the workspace.
+- `membercount` (Number) Member Count of the workspace.
 - `plan` (String) Tier of the worskpace.
 - `slug` (String) Slug Identifier of the worskpace.
 
