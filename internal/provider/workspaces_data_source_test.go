@@ -18,7 +18,7 @@ func TestAccWorkspacesDataSource(t *testing.T) {
 				Config: providerConfig + `data "xata_workspaces" "test" {}`,
 				Check: resource.ComposeAggregateTestCheckFunc(
 					// Verify number of workspaces returned
-					resource.TestCheckResourceAttr("data.xata_workspaces.test", "workspaces.#", "2"),
+					resource.TestCheckResourceAttr("data.xata_workspaces.test", "workspaces.#", "4"),
 					// Verify the first workspace to ensure all attributes are set
 					resource.TestCheckResourceAttr("data.xata_workspaces.test", "workspaces.0.id", "Tomiwa-Aribisala-s-workspace-tameub"),
 					resource.TestCheckResourceAttr("data.xata_workspaces.test", "workspaces.0.name", "Tomiwa Aribisala's workspace"),
